@@ -3,15 +3,16 @@
    ========================================================================== */
 
 @font-face {
-  font-family: "Fredoka";
-  src: url("/assets/fonts/fredoka-latin.woff2") format("woff2");
-  font-weight: 300 700;
+  font-family: "Inter";
+  src: url("/assets/fonts/inter-latin.woff2") format("woff2");
+  font-weight: 400 800;
   font-display: swap;
 }
 @font-face {
-  font-family: "Work Sans";
-  src: url("/assets/fonts/worksans-latin.woff2") format("woff2");
-  font-weight: 100 900;
+  font-family: "Playfair Display";
+  src: url("/assets/fonts/playfair-italic-latin.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -29,8 +30,9 @@
   --muted: #a6b3cc;
   --line: rgba(63, 208, 224, 0.35);
 
-  --font-display: "Fredoka", "Arial Rounded MT Bold", "Trebuchet MS", system-ui, sans-serif;
-  --font-body: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-accent: "Playfair Display", Georgia, "Times New Roman", serif;
 
   --radius: 14px;
   --container: 1180px;
@@ -85,16 +87,23 @@ ul { padding-left: 1.2em; }
 /* ---------- Typography ---------- */
 .display, h1, h2, h3 { font-family: var(--font-display); line-height: 1.05; margin: 0 0 .5em; }
 .display {
-  text-transform: uppercase;
-  color: var(--cyan);
-  font-weight: 700;
-  letter-spacing: .01em;
-  text-shadow: 4px 4px 0 var(--navy-900);
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: -.02em;
   font-size: clamp(2.4rem, 6vw, 4.6rem);
 }
-.section--foam .display { text-shadow: 4px 4px 0 var(--navy-800); }
+/* Accent words: <em> inside a heading switches to a serif italic */
+.display em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--cyan);
+}
+.section--foam .display { color: var(--ink); }
+.section--foam .display em { color: var(--cyan-600); }
 h2 { font-size: clamp(2rem, 4.5vw, 3.3rem); }
-h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); font-weight: 600; line-height: 1.25; color: #fff; }
+h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); font-weight: 700; line-height: 1.25; letter-spacing: -.01em; color: #fff; }
 .section--foam h3 { color: var(--ink); }
 .eyebrow {
   display: inline-block;
@@ -553,8 +562,7 @@ body.lp {
 .lp .lp-header-cta { display: none; }
 .lp .section { padding-block: 64px; }
 
-.lp .display { font-size: 2.25rem; text-shadow: 3px 3px 0 var(--navy-900); }
-.lp .section--foam .display { text-shadow: 3px 3px 0 var(--navy-800); }
+.lp .display { font-size: 2.25rem; }
 .lp .lp-hero h1 { font-size: 2.7rem; }
 .lp .lead, .lp .story p { font-size: 1.06rem; }
 .lp .story__turn { font-size: 1.7rem !important; }
