@@ -8,6 +8,7 @@ Website statis (HTML + CSS + sedikit JS), tanpa build step. Semua konten sudah t
 index.html      Home
 about.html      About Us, Vision, Mission, Project       → /about
 diving.html     Daily Dive Trips, About Sea, Spots, FAQ  → /diving
+pricelist.html  Tabel harga: fun diving, PADI, park fee  → /pricelist
 gallery.html    Portfolio + lightbox                     → /gallery
 contact.html    Kontak + form → WhatsApp                 → /contact
 lp.html         Landing page storytelling + CTA booking     → /lp
